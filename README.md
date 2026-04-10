@@ -1,6 +1,6 @@
 # Dhruvi Chheda — AI Artist Portfolio
 
-🔗 **Live Portfolio:** https://.github.io/portfolio
+🔗 **Live Portfolio:** [https://.github.io/portfolio](https://dhruvi0704.github.io/Portfolio/)
 
 ---
 
@@ -17,8 +17,8 @@ at Shah and Anchor Kutchhi Engineering College, Mumbai (2022–2026).
 ## What's Inside
 - 🎨 AI-generated image gallery
 - 🎬 AI video showcase
-- 💼 Featured projects (ResuMind AI, Virtual Try-On, more)
-- 🏆 Certifications (Oracle, IBM, Google, Cisco)
+- 💼 Featured projects
+- 🏆 Certifications 
 - 📬 Contact section
 
 ---
@@ -40,4 +40,3 @@ at Shah and Anchor Kutchhi Engineering College, Mumbai (2022–2026).
 
 ---
 
-*Built for the AI Artist role at Paperboat Design Studios*
