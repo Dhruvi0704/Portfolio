@@ -88,10 +88,19 @@ nav.scrolled{border-color:var(--border)}
 .gallery-images{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
  
 /* Video row — 3 equal columns */
-.gallery-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:0}
+.gallery-videos{
+  column-count:3;
+  column-gap:16px;
+}
  
 /* Each gallery card */
-.gallery-card{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;background:#111}
+.gallery-card{
+  break-inside:avoid;
+  margin-bottom:16px;
+  background:transparent;
+  overflow:hidden;
+  border-radius:6px;
+}
  
 /* Images fill their card */
 .gallery-card img{
@@ -102,17 +111,58 @@ nav.scrolled{border-color:var(--border)}
   transition:transform .5s cubic-bezier(.25,.46,.45,.94);
 }
 .gallery-card:hover img{transform:scale(1.04)}
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:780px;
+    height:auto;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.18);
+}
  
 /* Videos fill their card */
 .gallery-card video{
   width:100%;
-  height:260px;
-  object-fit:cover;
+  height:auto;
   display:block;
-  transition:transform .5s cubic-bezier(.25,.46,.45,.94);
+  border-radius:6px;
 }
+
 .gallery-card:hover video{transform:scale(1.04)}
- 
+
+.gallery-card.portrait{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.gallery-card.portrait video{
+  width:auto;
+  max-width:100%;
+  height:520px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+@media(max-width:900px){
+  .gallery-videos{
+    column-count:2;
+  }
+}
+
+@media(max-width:560px){
+  .gallery-videos{
+    column-count:1;
+  }
+}
 /* Hover overlay */
 .gallery-card .overlay{
   position:absolute;
@@ -246,9 +296,9 @@ footer span{font-size:.72rem;letter-spacing:.1em;color:var(--muted)}
       <div class="floating-orb orb3"></div>
       <div class="hero-art">
         <div class="art-grid">
-          <video autoplay loop muted playsinline>
-          <source src="video4.mp4" type="video/mp4">
-          </video>
+          <div class="hero-image">
+           <img src="image3.png" alt="Portfolio Cover">
+          </div>
         </div>
       </div>
     </div>
@@ -361,34 +411,42 @@ footer span{font-size:.72rem;letter-spacing:.1em;color:var(--muted)}
   </div><!-- end gallery-images -->
 
   <!-- BOTTOM ROW: 3 Videos -->
-  <div class="gallery-row-label reveal" style="transition-delay:.25s;margin-top:2rem">Videos</div>
-  <div class="gallery-videos reveal" style="transition-delay:.3s">
+  <!-- BOTTOM ROW: Videos -->
+<div class="gallery-row-label reveal" style="transition-delay:.25s;margin-top:2rem">
+  Videos
+</div>
 
-    <!-- Video 1 -->
-    <div class="gallery-card" data-type="video" data-title="Video 1">
-      <video autoplay loop muted playsinline>
-        <source src="video.mp4" type="video/mp4">
-      </video>
-      <div class="video-badge">▶ Video</div>
-    </div>
+<div class="gallery-videos reveal" style="transition-delay:.3s">
 
-    <!-- Video 2 -->
-    <div class="gallery-card" data-type="video" data-title="Video 2">
-      <video autoplay loop muted playsinline>
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      <div class="video-badge">▶ Video</div>
-    </div>
+  <!-- Video 1 -->
+  <div class="gallery-card" data-type="video">
+    <video autoplay loop controls playsinline>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
 
-    <!-- Video 3 -->
-    <div class="gallery-card" data-type="video" data-title="Video 3">
-      <video autoplay loop muted playsinline>
-        <source src="video3.mp4" type="video/mp4">
-      </video>
-      <div class="video-badge">▶ Video</div>
-    </div>
+  <!-- Video 2 -->
+  <div class="gallery-card" data-type="video">
+    <video autoplay loop controls playsinline>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+  </div>
 
-  </div><!-- end gallery-videos -->
+  <!-- Video 3 -->
+  <div class="gallery-card portrait" data-type="video">
+  <video controls playsinline>
+    <source src="video3.mp4" type="video/mp4">
+  </video>
+</div>
+
+  <!-- Video 4 -->
+  <div class="gallery-card" data-type="video">
+    <video autoplay loop controls playsinline>
+      <source src="video5.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</div><!-- end gallery-videos -->
 </section>
 
 <!-- PROJECTS -->
